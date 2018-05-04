@@ -1,0 +1,29 @@
+.mp4
+--assembled.mp4 - 13945.780kb
+--Part-1.mp4 - 1399.366kb
+--Part-2.mp4 - 1399.366kb
+--Part-3.mp4 - 1399.366kb
+--Part-4.mp4 - 1399.366kb
+--Part-5.mp4 - 1399.365kb
+--sliceMe.mp4 - 6996.830kb
+.gz
+--Part-1.mp4.gz - 1373.382kb
+--Part-2.mp4.gz - 1398.937kb
+--Part-3.mp4.gz - 1396.274kb
+--Part-4.mp4.gz - 1396.359kb
+--Part-5.mp4.gz - 1383.998kb
+.txt
+--output-text.txt - 0.145kb
+--results.txt - 0.029kb
+--text - Copy.txt - 0.121kb
+--text.txt - 0.121kb
+--words.txt - 0.019kb
+.html
+--error.html - 0.169kb
+--index.html - 0.260kb
+--info.html - 0.152kb
+.png
+--copyMe-Copy.png - 9.136kb
+--copyMe.png - 9.136kb
+.sln
+--03. Streams_Exercises.sln - 4.103kb

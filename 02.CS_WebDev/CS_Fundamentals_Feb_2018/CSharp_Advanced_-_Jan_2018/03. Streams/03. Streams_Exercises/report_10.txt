@@ -1,0 +1,185 @@
+.cache
+--02. Line Numbers.AssemblyInfoInputs.cache - 0.041kb
+--02. Line Numbers.csproj.CoreCompileInputs.cache - 0.041kb
+--02. Line Numbers.csprojResolveAssemblyReference.cache - 465.630kb
+--02. Line Numbers.csproj.nuget.cache - 0.146kb
+--01. Odd Lines.AssemblyInfoInputs.cache - 0.041kb
+--01. Odd Lines.csproj.CoreCompileInputs.cache - 0.041kb
+--01. Odd Lines.csprojResolveAssemblyReference.cache - 465.630kb
+--02. Odd Lines.AssemblyInfoInputs.cache - 0.041kb
+--02. Odd Lines.csproj.CoreCompileInputs.cache - 0.041kb
+--01. Odd Lines.csproj.nuget.cache - 0.146kb
+--02. Odd Lines.csproj.nuget.cache - 0.146kb
+--03. Word Count.AssemblyInfoInputs.cache - 0.041kb
+--03. Word Count.csproj.CoreCompileInputs.cache - 0.041kb
+--03. Word Count.csprojResolveAssemblyReference.cache - 465.630kb
+--03. Word Count.csproj.nuget.cache - 0.146kb
+--04. Copy Binary File.AssemblyInfoInputs.cache - 0.041kb
+--04. Copy Binary File.csproj.CoreCompileInputs.cache - 0.041kb
+--04. Copy Binary File.csprojResolveAssemblyReference.cache - 465.630kb
+--04. Copy Binary File.csproj.nuget.cache - 0.146kb
+--05. Slicing File.AssemblyInfoInputs.cache - 0.041kb
+--05. Slicing File.csproj.CoreCompileInputs.cache - 0.041kb
+--05. Slicing File.csproj.nuget.cache - 0.146kb
+--06. Zipping Sliced Files.AssemblyInfoInputs.cache - 0.041kb
+--06. Zipping Sliced Files.csproj.CoreCompileInputs.cache - 0.041kb
+--06. Zipping Sliced Files.csprojResolveAssemblyReference.cache - 465.630kb
+--06. Zipping Sliced Files.csproj.nuget.cache - 0.146kb
+--07. Directory Traversal.AssemblyInfoInputs.cache - 0.041kb
+--07. Directory Traversal.csproj.CoreCompileInputs.cache - 0.041kb
+--07. Directory Traversal.csprojResolveAssemblyReference.cache - 465.630kb
+--07. Directory Traversal.csproj.nuget.cache - 0.146kb
+--08. Full Directory Traversal.AssemblyInfoInputs.cache - 0.041kb
+--08. Full Directory Traversal.csproj.CoreCompileInputs.cache - 0.041kb
+--08. Full Directory Traversal.csproj.nuget.cache - 0.146kb
+--09. HTTP Server.AssemblyInfoInputs.cache - 0.041kb
+--09. HTTP Server.csproj.CoreCompileInputs.cache - 0.041kb
+--09. HTTP Server.csprojResolveAssemblyReference.cache - 465.630kb
+--09. HTTP Server.csproj.nuget.cache - 0.146kb
+.json
+--02. Line Numbers.deps.json - 0.469kb
+--02. Line Numbers.runtimeconfig.dev.json - 0.230kb
+--02. Line Numbers.runtimeconfig.json - 0.150kb
+--project.assets.json - 38.649kb
+--01. Odd Lines.deps.json - 0.460kb
+--01. Odd Lines.runtimeconfig.dev.json - 0.230kb
+--01. Odd Lines.runtimeconfig.json - 0.150kb
+--project.assets.json - 38.632kb
+--03. Word Count.deps.json - 0.463kb
+--03. Word Count.runtimeconfig.dev.json - 0.230kb
+--03. Word Count.runtimeconfig.json - 0.150kb
+--project.assets.json - 38.638kb
+--04. Copy Binary File.deps.json - 0.480kb
+--04. Copy Binary File.runtimeconfig.dev.json - 0.230kb
+--04. Copy Binary File.runtimeconfig.json - 0.150kb
+--project.assets.json - 38.673kb
+--05. Slicing File.deps.json - 0.469kb
+--05. Slicing File.runtimeconfig.dev.json - 0.230kb
+--05. Slicing File.runtimeconfig.json - 0.150kb
+--project.assets.json - 38.649kb
+--06. Zipping Sliced Files.deps.json - 0.492kb
+--06. Zipping Sliced Files.runtimeconfig.dev.json - 0.230kb
+--06. Zipping Sliced Files.runtimeconfig.json - 0.150kb
+--project.assets.json - 38.696kb
+--07. Directory Traversal.deps.json - 0.489kb
+--07. Directory Traversal.runtimeconfig.dev.json - 0.230kb
+--07. Directory Traversal.runtimeconfig.json - 0.150kb
+--project.assets.json - 38.690kb
+--08. Full Directory Traversal.deps.json - 0.504kb
+--08. Full Directory Traversal.runtimeconfig.dev.json - 0.230kb
+--08. Full Directory Traversal.runtimeconfig.json - 0.150kb
+--project.assets.json - 38.720kb
+--09. HTTP Server.deps.json - 0.466kb
+--09. HTTP Server.runtimeconfig.dev.json - 0.230kb
+--09. HTTP Server.runtimeconfig.json - 0.150kb
+--project.assets.json - 38.644kb
+.cs
+--02. Line Numbers.AssemblyInfo.cs - 0.997kb
+--01. Odd Lines.AssemblyInfo.cs - 0.988kb
+--02. Odd Lines.AssemblyInfo.cs - 0.988kb
+--03. Word Count.AssemblyInfo.cs - 0.991kb
+--04. Copy Binary File.AssemblyInfo.cs - 1.009kb
+--05. Slicing File.AssemblyInfo.cs - 0.997kb
+--06. Zipping Sliced Files.AssemblyInfo.cs - 1.021kb
+--07. Directory Traversal.AssemblyInfo.cs - 1.018kb
+--08. Full Directory Traversal.AssemblyInfo.cs - 1.032kb
+--09. HTTP Server.AssemblyInfo.cs - 0.994kb
+--02. Line Numbers.cs - 0.686kb
+--01. Odd Lines.cs - 0.629kb
+--03. Word Count.cs - 1.822kb
+--04. Copy Binary File.cs - 0.676kb
+--Program.cs - 2.429kb
+--06. Zipping Sliced Files.cs - 2.647kb
+--07. Directory Traversal.cs - 1.552kb
+--08. Full Directory Traversal.cs - 2.162kb
+--Program.cs - 0.193kb
+.dll
+--02. Line Numbers.dll - 5.000kb
+--02. Line Numbers.dll - 5.000kb
+--01. Odd Lines.dll - 4.500kb
+--01. Odd Lines.dll - 4.500kb
+--03. Word Count.dll - 6.500kb
+--03. Word Count.dll - 6.500kb
+--04. Copy Binary File.dll - 4.500kb
+--04. Copy Binary File.dll - 4.500kb
+--05. Slicing File.dll - 6.000kb
+--05. Slicing File.dll - 6.000kb
+--06. Zipping Sliced Files.dll - 6.500kb
+--06. Zipping Sliced Files.dll - 6.500kb
+--07. Directory Traversal.dll - 6.500kb
+--07. Directory Traversal.dll - 6.500kb
+--08. Full Directory Traversal.dll - 7.500kb
+--08. Full Directory Traversal.dll - 7.500kb
+--09. HTTP Server.dll - 4.500kb
+--09. HTTP Server.dll - 4.500kb
+.pdb
+--02. Line Numbers.pdb - 0.723kb
+--02. Line Numbers.pdb - 0.723kb
+--01. Odd Lines.pdb - 0.695kb
+--01. Odd Lines.pdb - 0.695kb
+--03. Word Count.pdb - 1.289kb
+--03. Word Count.pdb - 1.289kb
+--04. Copy Binary File.pdb - 0.719kb
+--04. Copy Binary File.pdb - 0.719kb
+--05. Slicing File.pdb - 1.215kb
+--05. Slicing File.pdb - 1.215kb
+--06. Zipping Sliced Files.pdb - 1.324kb
+--06. Zipping Sliced Files.pdb - 1.324kb
+--07. Directory Traversal.pdb - 1.207kb
+--07. Directory Traversal.pdb - 1.207kb
+--08. Full Directory Traversal.pdb - 1.496kb
+--08. Full Directory Traversal.pdb - 1.496kb
+--09. HTTP Server.pdb - 0.480kb
+--09. HTTP Server.pdb - 0.480kb
+.props
+--02. Line Numbers.csproj.nuget.g.props - 1.592kb
+--01. Odd Lines.csproj.nuget.g.props - 1.589kb
+--02. Odd Lines.csproj.nuget.g.props - 1.589kb
+--03. Word Count.csproj.nuget.g.props - 1.590kb
+--04. Copy Binary File.csproj.nuget.g.props - 1.596kb
+--05. Slicing File.csproj.nuget.g.props - 1.592kb
+--06. Zipping Sliced Files.csproj.nuget.g.props - 1.600kb
+--07. Directory Traversal.csproj.nuget.g.props - 1.599kb
+--08. Full Directory Traversal.csproj.nuget.g.props - 1.604kb
+--09. HTTP Server.csproj.nuget.g.props - 1.591kb
+.targets
+--02. Line Numbers.csproj.nuget.g.targets - 0.958kb
+--01. Odd Lines.csproj.nuget.g.targets - 0.958kb
+--02. Odd Lines.csproj.nuget.g.targets - 0.958kb
+--03. Word Count.csproj.nuget.g.targets - 0.958kb
+--04. Copy Binary File.csproj.nuget.g.targets - 0.958kb
+--05. Slicing File.csproj.nuget.g.targets - 0.958kb
+--06. Zipping Sliced Files.csproj.nuget.g.targets - 0.958kb
+--07. Directory Traversal.csproj.nuget.g.targets - 0.958kb
+--08. Full Directory Traversal.csproj.nuget.g.targets - 0.958kb
+--09. HTTP Server.csproj.nuget.g.targets - 0.958kb
+.csproj
+--02. Line Numbers.csproj - 0.174kb
+--01. Odd Lines.csproj - 0.174kb
+--03. Word Count.csproj - 0.174kb
+--04. Copy Binary File.csproj - 0.174kb
+--05. Slicing File.csproj - 0.174kb
+--06. Zipping Sliced Files.csproj - 0.174kb
+--07. Directory Traversal.csproj - 0.174kb
+--08. Full Directory Traversal.csproj - 0.174kb
+--09. HTTP Server.csproj - 0.174kb
+.txt
+--02. Line Numbers.csproj.FileListAbsolute.txt - 1.677kb
+--01. Odd Lines.csproj.FileListAbsolute.txt - 1.612kb
+--03. Word Count.csproj.FileListAbsolute.txt - 1.634kb
+--04. Copy Binary File.csproj.FileListAbsolute.txt - 1.763kb
+--05. Slicing File.csproj.FileListAbsolute.txt - 1.504kb
+--06. Zipping Sliced Files.csproj.FileListAbsolute.txt - 1.849kb
+--07. Directory Traversal.csproj.FileListAbsolute.txt - 1.827kb
+--08. Full Directory Traversal.csproj.FileListAbsolute.txt - 1.738kb
+--09. HTTP Server.csproj.FileListAbsolute.txt - 1.655kb
+.ide
+--storage.ide - 628.000kb
+.ide-shm
+--storage.ide-shm - 32.000kb
+.ide-wal
+--storage.ide-wal - 1013.938kb
+.lock
+--db.lock - 0.000kb
+.suo
+--.suo - 54.000kb
