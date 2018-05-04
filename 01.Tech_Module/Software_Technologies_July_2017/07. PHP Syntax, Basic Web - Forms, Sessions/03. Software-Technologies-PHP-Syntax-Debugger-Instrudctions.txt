@@ -1,0 +1,8 @@
+﻿1. инсталирахме XAMPP с PHP и Apache
+2. инсталирахме PHPStorm / IntelliJ
+3. конфигурирахме интерпретатор в IDE-то и му сложихме дебъгера, подобно на презентацията
+4. Нов проект!
+   4.1. Направихм го в htdocs папката на xampp (пр. c:\xampp\htdocs\first-project)
+   4.2. Пуснахме Apache от XAMPP Control panel
+5. Run -> Edit Configurations -> зеленото плюсче :) -> PHP Web Application
+    5.1. създадохме Server с път "localhost/first-project"

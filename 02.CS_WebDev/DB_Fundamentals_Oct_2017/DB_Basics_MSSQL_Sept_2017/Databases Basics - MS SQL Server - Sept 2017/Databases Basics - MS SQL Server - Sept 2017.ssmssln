@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 14.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B1EC1C51-42A3-4E24-9887-99F2782EABFE}"
+	ProjectSection(SolutionItems) = preProject
+		..\03. Databases Introduction\01. DB-Basics-MSSQL-Introduction-to-Databases-Lab.sql = ..\03. Databases Introduction\01. DB-Basics-MSSQL-Introduction-to-Databases-Lab.sql
+		..\21. Exam - Databases MSSQL Server Exam - 22 October 2017\01. DDL_DataSet.sql = ..\21. Exam - Databases MSSQL Server Exam - 22 October 2017\01. DDL_DataSet.sql
+		..\05. Data Definition and DataTypes - Exercise\02. DB-Basics-MSSQL-Data-Definition-And-Datatypes-Exercises_Solution.sql = ..\05. Data Definition and DataTypes - Exercise\02. DB-Basics-MSSQL-Data-Definition-And-Datatypes-Exercises_Solution.sql
+		..\07. Basic CRUD - Exercises\03. DB-Basics-MSSQL-Basic-CRUD-Exercises_Solution.sql = ..\07. Basic CRUD - Exercises\03. DB-Basics-MSSQL-Basic-CRUD-Exercises_Solution.sql
+		..\09. Built-In Functions - Exercises\04. DB-Basics-MSSQL-Built-in-Functions-Exercises_Solution.sql = ..\09. Built-In Functions - Exercises\04. DB-Basics-MSSQL-Built-in-Functions-Exercises_Solution.sql
+		..\11. Data Aggregation - Exercises\05. DB-Basics-MSSQL-Data-Aggregation-Exercises_Solution.sql = ..\11. Data Aggregation - Exercises\05. DB-Basics-MSSQL-Data-Aggregation-Exercises_Solution.sql
+		..\13. Table Relations - Exercises\06. DB-Basics-MSSQL-Table-Relations-Exercises_Solutions.sql = ..\13. Table Relations - Exercises\06. DB-Basics-MSSQL-Table-Relations-Exercises_Solutions.sql
+		..\15. SubQueries and Joins - Exercises\07. DB-Basics-MSSQL-Joins-Subqueries-CTE-and-Indices-Exercises_Solutions.sql = ..\15. SubQueries and Joins - Exercises\07. DB-Basics-MSSQL-Joins-Subqueries-CTE-and-Indices-Exercises_Solutions.sql
+		..\17. Functions, Triggers and Prodecures - Exercises\08. DB-Basics-MSSQL-Functions-and-Procedures-Exercises_Solutions.sql = ..\17. Functions, Triggers and Prodecures - Exercises\08. DB-Basics-MSSQL-Functions-and-Procedures-Exercises_Solutions.sql
+		..\19. Transactions - Exercise\09. DB-Basics-MSSQL-Triggers-And-Transactions-Exercises.sql = ..\19. Transactions - Exercise\09. DB-Basics-MSSQL-Triggers-And-Transactions-Exercises.sql
+		..\20. Additional Exercises\20. Additional Exercises_Solutions.sql = ..\20. Additional Exercises\20. Additional Exercises_Solutions.sql
+		..\21. Exam - Databases MSSQL Server Exam - 22 October 2017\21. Databases MSSQL Server Exam - 22 October 2017_Solutions.sql = ..\21. Exam - Databases MSSQL Server Exam - 22 October 2017\21. Databases MSSQL Server Exam - 22 October 2017_Solutions.sql
+	EndProjectSection
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DataBases_Templates", "DataBases_Templates\DataBases_Templates.ssmssqlproj", "{8469474B-56C2-48D0-8371-45071DCDCB4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8469474B-56C2-48D0-8371-45071DCDCB4A}.Default|Default.ActiveCfg = Default
+		{76D8CF5D-85D7-4593-B40F-CDF30758F1BE}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

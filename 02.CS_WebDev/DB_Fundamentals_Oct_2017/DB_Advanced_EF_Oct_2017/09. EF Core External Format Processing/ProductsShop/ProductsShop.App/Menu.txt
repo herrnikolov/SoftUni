@@ -1,0 +1,10 @@
+please, selct command:
+
+1 - Reset Database
+2 - Import data from JSON files
+3 - Export data to JSON files
+4 - Import data from XML files
+5 - Export data to XML files
+
+0 -Exit
+===============
