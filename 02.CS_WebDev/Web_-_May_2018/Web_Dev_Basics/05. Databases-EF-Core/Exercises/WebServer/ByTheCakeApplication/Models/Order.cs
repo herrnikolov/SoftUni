@@ -10,6 +10,7 @@
         {
             this.Products = new List<ProductOrder>();
         }
+        [Key]
         public int Id { get; set; }
         public ICollection<ProductOrder> Products { get; set; }
     }

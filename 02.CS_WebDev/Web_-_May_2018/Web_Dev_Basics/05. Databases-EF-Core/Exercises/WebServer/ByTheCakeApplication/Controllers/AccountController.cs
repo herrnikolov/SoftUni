@@ -52,10 +52,13 @@
                 RegistrationDate = DateTime.UtcNow
             };
 
-            var context = new ByTheCakeContext();
-            context.Users.Add(user);
-            context.SaveChanges();
-            return null;
+            using (var context = new ByTheCakeContext())
+            {
+                context.Users.Add(user);
+                context.SaveChanges();
+            }            
+            
+            return new RedirectResponse("/");
         }
 
         public IHttpResponse Login()

@@ -10,6 +10,8 @@
         {
             this.Orders = new List<Order>();
         }
+
+        [Key]
         public int Id { get; set; }
         public int MyProperty { get; set; }
         [Required, MinLength(3)]
@@ -18,6 +20,7 @@
         public string Username { get; set; }
         [Required]
         public string PasswordHash { get; set; }
+        [Required]
         public DateTime RegistrationDate { get; set; }
 
         public ICollection<Order> Orders { get; set; }
