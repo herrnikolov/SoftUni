@@ -5,6 +5,7 @@ This repository contains all the courses that I've passed so far.
 
 Sturecture:
 .<br />
+<pre>
 ├── 00.Entry_Module<br />
 │   └── Programming_Basics_March_2017<br />
 ├── 01.Tech_Module<br />
@@ -25,6 +26,7 @@ Sturecture:
     └── DevOps-_Basics_Oct_2017<br />
 <br />
 
+</pre>
 You can find more details for each course:<br />
 https://softuni.bg/curriculum
 
