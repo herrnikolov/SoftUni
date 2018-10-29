@@ -4,7 +4,7 @@ SoftUni Courses
 This repository contains all the courses that I've passed so far. 
 
 Sturecture:
-.
+.<br />
 ├── 00.Entry_Module<br />
 │   └── Programming_Basics_March_2017<br />
 ├── 01.Tech_Module<br />
@@ -16,7 +16,8 @@ Sturecture:
 │   └── Web_-_May_2018<br />
 ├── 03.Other<br />
     └── DevOps-_Basics_Oct_2017<br />
+<br />
 
-You can find more details for each course: 
+You can find more details for each course:<br />
 https://softuni.bg/curriculum
 
