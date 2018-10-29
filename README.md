@@ -12,8 +12,15 @@ Sturecture:
 		│   └── Software_Technologies_July_2017<br />
 		├── 02.CS_WebDev<br />
 		│   ├── CS_Fundamentals_Feb_2018<br />
+		│   │   ├── CSharp_Advanced_-_Jan_2018<br />
+		│   │   ├── OOP_Advanced_-_March_2018<br />
+		│   │   └── OOP_Basics_-_Feb_2018<br />
 		│   ├── DB_Fundamentals_Oct_2017<br />
+		│   │   ├── DB_Advanced_EF_Oct_2017<br />
+		│   │   └── DB_Basics_MSSQL_Sept_2017<br />
 		│   └── Web_-_May_2018<br />
+		│       ├── MVC_ASP.NET Core<br />
+		│       └── Web_Dev_Basics<br />
 		├── 03.Other<br />
 		    └── DevOps-_Basics_Oct_2017<br />
 		<br />
