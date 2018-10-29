@@ -22,7 +22,7 @@ Sturecture:
 │   └── Web_-_May_2018
 │	 ├── MVC_ASP.NET Core
 │	 └── Web_Dev_Basics
-├── 03.Other
+└── 03.Other
     └── DevOps-_Basics_Oct_2017
 
 </pre>
