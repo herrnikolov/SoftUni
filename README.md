@@ -4,8 +4,8 @@ SoftUni Courses
 This repository contains all the courses that I've passed so far. 
 
 Sturecture:
-.
 <pre>
+.
 ├── 00.Entry_Module
 │   └── Programming_Basics_March_2017
 ├── 01.Tech_Module
