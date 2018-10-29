@@ -20,8 +20,8 @@ Sturecture:
 │   │   ├── DB_Advanced_EF_Oct_2017
 │   │   └── DB_Basics_MSSQL_Sept_2017
 │   └── Web_-_May_2018
-│	    ├── MVC_ASP.NET Core
-│	    └── Web_Dev_Basics
+│	 ├── MVC_ASP.NET Core
+│	 └── Web_Dev_Basics
 ├── 03.Other
     └── DevOps-_Basics_Oct_2017
 
