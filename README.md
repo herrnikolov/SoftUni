@@ -19,8 +19,8 @@ Sturecture:
 │   │   ├── DB_Advanced_EF_Oct_2017<br />
 │   │   └── DB_Basics_MSSQL_Sept_2017<br />
 │   └── Web_-_May_2018<br />
-│   	├── MVC_ASP.NET Core<br />
-│   	└── Web_Dev_Basics<br />
+│		├── MVC_ASP.NET Core<br />
+│		└── Web_Dev_Basics<br />
 ├── 03.Other<br />
     └── DevOps-_Basics_Oct_2017<br />
 <br />
