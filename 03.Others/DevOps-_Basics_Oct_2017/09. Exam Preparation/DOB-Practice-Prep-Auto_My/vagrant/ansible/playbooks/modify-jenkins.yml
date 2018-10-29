@@ -1,0 +1,9 @@
+---
+- hosts: jenkins
+  become: true
+  vars:
+    jenkins_hostname: jenkins.sulab.local
+  roles:
+    - add-credentials
+    - add-node
+    - add-job
