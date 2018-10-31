@@ -1,0 +1,4 @@
+---
+- include: install-jenkins.yml
+- include: install-jenkins-plugins.yml
+- include: install-docker.yml

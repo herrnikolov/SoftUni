@@ -1,0 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.ssh.insert_key = false
+
+  config.vm.define "dobweb" do |dobweb|
+    dobweb.vm.box="shekeriev/centos-7-64-minimal"
+    dobweb.vm.hostname = "dbo-web.sulab.local"
+    dobweb.vm.network "private_network", ip: "192.168.81.100"
+    dobweb.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+    dobweb.vm.synced_folder "vagrant/web/", "/vagrant"
+    dobweb.vm.provision "shell", path: "dobweb.sh"
+  end
+
+  config.vm.define "dobdb" do |dobdb|
+    dobdb.vm.box="shekeriev/centos-7-64-minimal"
+    dobdb.vm.hostname = "dbo-db.sulab.local"
+    dobdb.vm.network "private_network", ip: "192.168.81.101"
+    dobdb.vm.synced_folder "vagrant/db/", "/vagrant"
+    dobdb.vm.provision "shell", path: "dobdb.sh"
+  end
+
+end
+ 
