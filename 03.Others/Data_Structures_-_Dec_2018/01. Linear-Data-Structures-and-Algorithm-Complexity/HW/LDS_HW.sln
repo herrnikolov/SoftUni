@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04._Remove_Odd_Occurrences"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05._Count_of_Occurrences", "05._Count_of_Occurrences\05._Count_of_Occurrences.csproj", "{87A3DE8D-FD47-4B51-A9F9-10AD9FA798F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06._Reversed_List", "06._Reversed_List\06._Reversed_List.csproj", "{42558BD8-CCE6-4002-9C08-A7E9020E4F26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{87A3DE8D-FD47-4B51-A9F9-10AD9FA798F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87A3DE8D-FD47-4B51-A9F9-10AD9FA798F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87A3DE8D-FD47-4B51-A9F9-10AD9FA798F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42558BD8-CCE6-4002-9C08-A7E9020E4F26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42558BD8-CCE6-4002-9C08-A7E9020E4F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42558BD8-CCE6-4002-9C08-A7E9020E4F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42558BD8-CCE6-4002-9C08-A7E9020E4F26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
