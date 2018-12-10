@@ -10,7 +10,7 @@ namespace _06._Reversed_List
     {
         static void Main(string[] args)
         {
-
+            var reversedList = new ReversedList<int>();
         }
     }
 }
