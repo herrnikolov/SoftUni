@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: softunit-rc
+spec:
+  replicas: 10
+  selector:
+    app: softunit
+  template:
+    metadata:
+      labels:
+        app: softunit
+    spec:
+      containers:
+      - name: softunit-container
+        image: shekeriev/softunit:v1
+        ports:
+        - containerPort: 80 

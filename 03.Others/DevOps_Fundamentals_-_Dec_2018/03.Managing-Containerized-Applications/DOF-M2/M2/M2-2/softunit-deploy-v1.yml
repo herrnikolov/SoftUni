@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: softunit-deploy
+spec:
+  replicas: 10
+  selector:
+    matchLabels: 
+      app: softunit
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: softunit
+    spec:
+      containers:
+      - name: softunit-container
+        image: shekeriev/softunit:v1
+        ports:
+        - containerPort: 80 

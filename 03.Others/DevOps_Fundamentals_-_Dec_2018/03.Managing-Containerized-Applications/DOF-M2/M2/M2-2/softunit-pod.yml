@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: softunit-pod
+spec:
+  containers:
+  - name: softunit-container
+    image: shekeriev/softunit:v1
+    ports:
+    - containerPort: 80
