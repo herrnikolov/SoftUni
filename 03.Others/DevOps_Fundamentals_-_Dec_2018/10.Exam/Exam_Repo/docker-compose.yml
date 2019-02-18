@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  nginx-host:
+    build: nginx/
+    ports:
+    - "80:80"
+    volumes: 
+    - ./app:/site
+    links:
+    - php-host
+    deploy: 
+      mode: replicated
+      replicas: 3
+  php-host:
+    build: php/
+    ports:
+    - "9000:9000"
+    volumes:
+    - ./app:/site
+    links:
+    - redis-host
+  redis-host:
+    image: redis:latest

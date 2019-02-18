@@ -1,0 +1,47 @@
+# ref: https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster
+# Create Resource Group
+az group create --name DOF --location westeurope
+
+# Create Service Principal
+az ad sp create-for-rbac --skip-assignment
+
+# Create Kubernetes Cluster
+az aks create \
+	--resource-group DOF \
+	--name DOFAKSCluster \
+	--node-count 2 \
+	--service-principal [GUID From Above] \
+	--client-secret [GUID From Above] \
+	--generate-ssh-keys
+
+#Connect kubectl to Cluster
+az aks get-credentials --resource-group DOF --name DOFAKSCluster
+
+kubectl get nodes
+kubectl get pods --all-namespaces
+
+# Deploy
+kubectl create -f elastic-stack/ -R --namespace=default
+kubectl create -f filebeat/ -R --namespace=default
+kubectl create -f metricbeat/ -R --namespace=default
+# Jenkins
+kubectl create namespace jenkins
+kubectl create serviceaccount --namespace kube-system tiller
+kubectl create clusterrolebinding tiller-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+
+helm init --service-account tiller
+helm install --name jenkins --namespace jenkins stable/jenkins
+helm status jenkins
+kubectl create clusterrolebinding jenkins --clusterrole=cluster-admin --serviceaccount=jenkins:default
+kubectl create configmap docker-config --from-file=$HOME/.docker/config.json -n jenkins
+# Get Jenkins Pass
+printf $(kubectl get secret --namespace jenkins jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
+  
+# Kubernetes Dashboard give rights
+kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+# Browse DAshboard
+az aks browse --resource-group DOF --name DOFAKSCluster
+
+
+kubectl get nodes
+kubectl get pods --all-namespaces

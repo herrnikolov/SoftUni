@@ -1,0 +1,139 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+$script = <<SCRIPT
+# Update and get dependencies
+# sudo yum -y update
+sudo yum install -y unzip curl wget vim
+
+# Turn off the firewall
+echo Turn off the firewall
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+
+# Turn off SELinux
+echo Turn off SELinux
+sudo setenforce 0
+
+# Download consul
+echo Fetching Consul...
+cd /tmp/
+curl -sSL https://releases.hashicorp.com/consul/1.4.2/consul_1.4.2_linux_amd64.zip -o consul.zip
+echo Installing Consul...
+unzip consul.zip
+sudo chmod +x consul
+sudo mv consul /usr/bin/consul
+
+sudo mkdir -p /etc/consul.d
+sudo chmod a+w /etc/consul.d
+
+sudo mkdir -p /opt/consul
+sudo chmod a+w /opt/consul
+
+
+# Download Nomad
+echo Fetching Nomad...
+cd /tmp/
+curl -sSL https://releases.hashicorp.com/nomad/0.8.7/nomad_0.8.7_linux_amd64.zip -o nomad.zip
+
+echo Installing Nomad...
+unzip nomad.zip
+sudo chmod +x nomad
+sudo mv nomad /usr/bin/nomad
+
+sudo mkdir -p /etc/nomad.d
+sudo chmod a+w /etc/nomad.d
+
+sudo mkdir -p /opt/nomad
+sudo chmod a+w /opt/nomad
+
+# Set hostname's IP to made advertisement Just Work
+sudo sed -i -e "s/.*server.*/$(ip route get 192.168.50 | awk '{print $NF;exit}') $(hostname)/" /etc/hosts
+sudo sed -i -e "s/.*client.*/$(ip route get 192.168.50 | awk '{print $NF;exit}') $(hostname)/" /etc/hosts
+
+SCRIPT
+
+$server = <<SERVER
+# Configuration
+echo Copying themplate configuration files ...
+sudo cp /vagrant/consul/server.json /etc/consul.d/server.json
+sudo cp /vagrant/nomad/server.hcl /etc/nomad.d/server.hcl
+
+echo Adjust the configuration ...
+sudo sed -i -e "s/%SERVER_ADDRESS%/$(ip route get 192.168.50 | awk '{print $NF;exit}')/" /etc/consul.d/server.json
+sudo sed -i -e "s/%SERVER_ADDRESS%/$(ip route get 192.168.50 | awk '{print $NF;exit}')/" /etc/nomad.d/server.hcl
+
+# Services
+echo Starting consul agent ...
+sudo bash -c "consul agent -config-dir /etc/consul.d > /var/log/consul 2>&1 &"
+
+echo Starting nomad agent ...
+sudo bash -c "nomad agent -config=/etc/nomad.d/server.hcl > /var/log/nomad 2>&1 &"
+SERVER
+
+$client = <<CLIENT
+# Configuration
+echo Set vm.max_map_count to a higher value ...
+sudo sysctl -w vm.max_map_count=262144
+
+echo Copying themplate configuration files ...
+sudo cp /vagrant/consul/client.json /etc/consul.d/client.json
+sudo cp /vagrant/nomad/client.hcl /etc/nomad.d/client.hcl
+
+echo Copying Docker configuration template ...
+sudo cp /vagrant/docker/daemon.json /etc/docker/daemon.json
+
+echo Adjust configuration of Nomad and Consul ...
+sudo sed -i -e "s/%CLIENT_ADDRESS%/$(ip route get 192.168.50 | awk '{print $NF;exit}')/" /etc/consul.d/client.json
+sudo sed -i -e "s/%CLIENT_ADDRESS%/$(ip route get 192.168.50 | awk '{print $NF;exit}')/" /etc/nomad.d/client.hcl
+sudo sed -i -e "s/%CLIENT_INTERFACE%/$(netstat -ie | grep -B1 "$(ip route get 192.168.50 | awk '{print $NF;exit}')" | head -n1 | awk '{print $1}' | cut -f 1 -d :)/" /etc/nomad.d/client.hcl
+
+echo Adjust configuration of Docker ...
+sudo sed -i -e "s/%CLIENT_ADDRESS%/$(ip route get 192.168.50 | awk '{print $NF;exit}')/" /etc/docker/daemon.json
+sudo sed -i -e 's=-H fd://==' /usr/lib/systemd/system/docker.service 
+
+# Services
+echo Reload services definitions ...
+sudo systemctl daemon-reload
+
+echo Starting consul agent ...
+sudo bash -c "consul agent -config-dir /etc/consul.d -advertise $(ip route get 192.168.50 | awk '{print $NF;exit}') > /var/log/consul 2>&1 &"
+
+echo Starting nomad agent ...
+sudo bash -c 'nomad agent -config=/etc/nomad.d/client.hcl >/var/log/nomad 2>&1 &'
+
+echo Restart Docker ...
+sudo systemctl restart docker
+CLIENT
+
+Vagrant.configure("2") do |config|
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "1024"
+  end
+
+  config.vm.box = "shekeriev/centos-7-64-minimal"
+  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+  config.vm.hostname = "nomad"
+  config.vm.provision "shell", inline: $script, privileged: false
+
+  config.vm.define 'server1' do |manager1|
+    manager1.vm.hostname = 'server1'
+    manager1.vm.network 'private_network', ip: '192.168.50.2'
+    manager1.vm.provision "shell", inline: $server, privileged: false
+  end
+
+  config.vm.define 'client1' do |client1|
+    client1.vm.hostname = 'client1'
+    client1.vm.network 'private_network', ip: '192.168.50.3'
+    client1.vm.provision "docker"
+    client1.vm.provision 'shell', inline: $client, privileged: false
+  end
+
+  config.vm.define 'client2' do |client2|
+    client2.vm.hostname = 'client2'
+    client2.vm.network 'private_network', ip: '192.168.50.4'
+    client2.vm.provision "docker"
+    client2.vm.provision 'shell', inline: $client, privileged: false
+  end
+
+end

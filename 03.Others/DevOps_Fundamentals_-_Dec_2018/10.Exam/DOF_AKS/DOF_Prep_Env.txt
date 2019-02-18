@@ -1,0 +1,18 @@
+sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+wget https://storage.googleapis.com/kubernetes-helm/helm-v2.12.3-linux-amd64.tar.gz
+tar -zxvf helm-v2.12.3-linux-amd64.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin/
+wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip -O /tmp/terraform.zip
+sudo apt-get install unzip
+unzip /tmp/terraform.zip -d /tmp
+sudo mv /tmp/terraform /usr/local/bin   
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install docker-ce

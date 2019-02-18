@@ -1,0 +1,25 @@
+def imagetag = new Date().format('yyyyMMdd.HHmmss')
+def image = "shekeriev/nomad-jenkins:${imagetag}"
+def docker_node = "tcp://192.168.50.3"
+def nomad_master = "http://192.168.50.2:4646"
+def reg_user = "YOUR-USER-NAME"
+def reg_pass = "YOUR-SECURE-PASS"
+
+node("jenkins-nomad-slave") 
+{
+    stage('Build Docker image') 
+    {
+        git 'https://github.com/shekeriev/simple-docker-image.git'
+        sh "DOCKER_HOST=${docker_node} docker build -t ${image} ."
+    }
+    stage ("Push to Docker Hub")
+    {
+        sh "DOCKER_HOST=${docker_node} docker login -u ${reg_user} -p ${reg_pass}"
+        sh "DOCKER_HOST=${docker_node} docker push ${image}"
+    }
+    stage ("Apply the changes with Nomad")
+    {
+        sh "sed 's/%DOCKER-IMAGE%/${imagetag}/g' -i nomad/amazing-web-app.nomad"
+        sh "nomad job run --address='${nomad_master}' nomad/amazing-web-app.nomad"
+    }
+}

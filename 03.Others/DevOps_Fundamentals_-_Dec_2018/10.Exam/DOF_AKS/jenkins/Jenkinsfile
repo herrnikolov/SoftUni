@@ -1,0 +1,123 @@
+def label = "docker-${UUID.randomUUID().toString()}"
+
+podTemplate(label: label, yaml: """
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: docker
+    image: docker:1.11
+    command: ['cat']
+    tty: true
+    volumeMounts:
+    - name: dockersock
+      mountPath: /var/run/docker.sock
+    - name: docker-config
+      mountPath: /root/.docker
+  - name: kubectl
+    image: lachlanevenson/k8s-kubectl:v1.8.0
+    command: [cat]
+    tty: true
+    volumeMounts:
+    - name: dockersock
+      mountPath: /var/run/docker.sock
+    - name: docker-config
+      mountPath: /root/.docker
+  volumes:
+  - name: dockersock
+    hostPath:
+      path: /var/run/docker.sock
+  - name: docker-config
+    configMap:
+      name: docker-config
+"""
+  ) {
+
+  def imagetag = new Date().format('yyyyMMdd.HHmmss')
+  def imageredis = "herrnikolov/redis-host:${imagetag}"
+  
+  node(label) 
+  {
+    stage('Build Redis image') 
+    {
+      git 'https://github.com/herrnikolov/dof-exam.git'
+      container('docker') 
+      {
+        sh "docker build -t ${imageredis} -f ${WORKSPACE}/redis/Dockerfile ."
+      }
+    }
+    stage ("Push")
+    {
+      container('docker') 
+      {
+        sh "docker push ${imageredis}"
+      }
+    }
+    stage ("Apply the changes with kubectl")
+    {
+      container('kubectl') 
+      {
+        sh "sed 's/%IMAGE-PLACEHOLDER%/${imagetag}/g' -i ${WORKSPACE}/redis.yml"
+        sh "kubectl apply -f ${WORKSPACE}/redis.yml"
+      }
+    }
+  }
+
+  def imagephp = "herrnikolov/php-host:${imagetag}"
+
+  node(label) 
+  {
+    stage('Build PHP image') 
+    {
+      git 'https://github.com/herrnikolov/dof-exam.git'          
+      container('docker')
+      {
+        sh "docker build -t ${imagephp} -f ${WORKSPACE}/php/Dockerfile ."
+      }
+    }    
+    stage ("Push")
+    {
+      container('docker') 
+      {
+        sh "docker push ${imagephp}"
+      }
+    }
+    stage ("Apply the changes with kubectl")
+    {
+      container('kubectl') 
+      {
+        sh "sed 's/%IMAGE-PLACEHOLDER%/${imagetag}/g' -i ${WORKSPACE}/php.yml"
+        sh "kubectl apply -f ${WORKSPACE}/php.yml"
+      }
+    }
+  }
+
+  def imagenginx = "herrnikolov/nginx-host:${imagetag}"
+
+  node(label) 
+  {
+    stage('Build Nginx image') 
+    {
+      git 'https://github.com/herrnikolov/dof-exam.git'
+      container('docker') 
+      {
+        sh "docker build -t ${imagenginx} -f ${WORKSPACE}/nginx/Dockerfile ."
+      }
+    }
+    stage ("Push")
+    {
+      container('docker') 
+      {
+        sh "docker push ${imagenginx}"
+      }
+    }
+    stage ("Apply the changes with kubectl")
+    {
+      container('kubectl') 
+      {
+        sh "sed 's/%IMAGE-PLACEHOLDER%/${imagetag}/g' -i ${WORKSPACE}/nginx.yml"
+        sh "kubectl apply -f ${WORKSPACE}/nginx.yml"
+      }
+    }
+  }
+}
