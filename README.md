@@ -25,7 +25,8 @@ Sturecture:
 └── 03.Others
     ├── Data_Structures_-_Dec_2018
     ├── DevOps_-_Basics_-_Oct_2017
-    └── DevOps_Fundamentals_-_Dec_2018
+    ├── DevOps_Fundamentals_-_Dec_2018    
+    └── High_Quality_Code_-_Dec_2019
 
 </pre>
 You can find more details for each course:<br />
