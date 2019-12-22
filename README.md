@@ -26,6 +26,7 @@ Sturecture:
     ├── Data_Structures_-_Dec_2018
     ├── DevOps_-_Basics_-_Oct_2017
     ├── DevOps_Fundamentals_-_Dec_2018    
+    ├── Algorithms_-_March_2019    
     └── High_Quality_Code_-_Dec_2019
 
 </pre>
